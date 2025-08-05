@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Notes Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Release Notes Manager</h1>
+            <div class="version-selector">
+                <input type="text" id="versionInput" placeholder="Enter version (e.g., 8.6)">
+                <button id="fetchButton">Fetch Release Notes</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="credentials-form" id="credentialsForm">
+                <h2>Enter Confluence Credentials</h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button id="submitCredentials">Submit</button>
+            </div>
+
+            <div class="release-notes-content" id="releaseNotesContent">
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Fetching release notes...</p>
+                </div>
+                <div class="content-area" id="contentArea"></div>
+            </div>
+        </main>
+
+        <div class="actions">
+            <button id="downloadOriginal" class="action-button">Download Original</button>
+            <button id="downloadParaphrased" class="action-button">Download Paraphrased</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
